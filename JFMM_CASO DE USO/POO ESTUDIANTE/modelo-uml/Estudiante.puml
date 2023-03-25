@@ -1,0 +1,43 @@
+@startuml
+
+class Estudiante {
+  -id: int
+  -nombre: string
+  -apellido: string
+  -genero: string
+  -cedula: string
+  -telefono: string
+  -direccion: string
+  +getId(): int
+  +setId(id: int): void
+  +getNombre(): string
+  +setNombre(nombre: string): void
+  +getApellido(): string
+  +setApellido(apellido: string): void
+  +getGenero(): string
+  +setGenero(genero: string): void
+  +getCedula(): string
+  +setCedula(cedula: string): void
+  +getTelefono(): string
+  +setTelefono(telefono: string): void
+  +getDireccion(): string
+  +setDireccion(direccion: string): void
+}
+
+class RepositorioEstudiante {
+  -estudiantes: Estudiante[]
+  +agregarEstudiante(estudiante: Estudiante): void
+  +buscarEstudiantePorCedula(cedula: string): Estudiante
+  +listarEstudiantes(): Estudiante[]
+}
+
+class CasoUsoEstudiante {
+  -repositorio: RepositorioEstudiante
+  +agregarEstudiante(data: any): void
+  +buscarEstudiantePorCedula(cedula: string): Estudiante
+  +listarEstudiantes(): Estudiante[]
+}
+
+  @enduml
+ 
+
